@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TuringBackend.Api</name>
+    </assembly>
+    <members>
+        <member name="T:TuringBackend.Api.Controllers.AttributeController">
+            <summary>
+                Everything about Attribute
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.AttributeController.Get">
+            <summary>
+                Get Attributes
+            </summary>
+            <returns>Return a list of attributes.</returns>
+            <response code="200">An array of object Attribute</response>
+            <response code="200">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.AttributeController.Get(System.Int32)">
+            <summary>
+                Get Attribute by ID
+            </summary>
+            <param name="attribute_id"></param>
+            <returns>Return a attribute by ID.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.AttributeController.GetAttributeValueByAttributeId(System.Int32)">
+            <summary>
+                Get Values Attribute from Atribute
+            </summary>
+            <param name="attribute_id"></param>
+            <returns>Get Values Attribute from Attribute.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.AttributeController.GetAttributeValueByProductId(System.Int32)">
+            <summary>
+                Get all Attributes with Product ID
+            </summary>
+            <param name="product_id"></param>
+            <returns>Get all Attributes with Product ID</returns>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.CustomerController">
+            <summary>
+                Everything about Customer
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.Update(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Update a customer
+            </summary>
+            <returns>Return a Object of Customer with auth credentials.</returns>
+            <param name="name">Customer name</param>
+            <param name="email">Customer email</param>
+            <param name="password">Customer password</param>
+            <param name="day_phone">Customer day phone</param>
+            <param name="eve_phone">Customer eve phone</param>
+            <param name="mob_phone">Customer mob phone</param>
+            <response code="200">An array of object Category</response>
+            <response code="400">Return a error object</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.Get">
+            <summary>
+                Get Customer by ID
+            </summary>
+            <returns>Return a Object of Customer with auth credentials.</returns>
+            <response code="200">A customer</response>
+            <response code="400">Return a error object</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.Post(System.String,System.String,System.String)">
+            <summary>
+                Register a Customer
+            </summary>
+            <param name="name">Customer name</param>
+            <param name="email">Email of User.</param>
+            <param name="password">Password of User</param>
+            <response code="200">Return a Object of Customer with auth credentials</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.Login(System.String,System.String)">
+            <summary>
+                Sign in in the Shopping.
+            </summary>
+            <param name="email">Email of User</param>
+            <param name="password">Password of User</param>
+            <response code="200">Return a Object of Customer with auth credentials</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.FaceBookLogin(System.String)">
+            <summary>
+                Sign in with a facebook login token.
+            </summary>
+            <returns>Token generated from your facebook login</returns>
+            <response code="200">Return a Object of Customer with auth credentials</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.UpdateAddress(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <response code="200">Return a Object of Customer with auth credentials</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.CustomerController.UpdateCreditCard(System.String)">
+            <response code="200">Return a Object of Customer with auth credentials</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.DepartmentController">
+            <summary>
+                Everything about Department
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.DepartmentController.Get">
+            <summary>
+                Get Departments
+            </summary>
+            <returns>Return a list of departments.</returns>
+            <response code="200">An array of object Department</response>
+            <response code="200">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.DepartmentController.Get(System.Int32)">
+            <summary>
+                Get Department by ID
+            </summary>
+            <param name="department_id"></param>
+            <returns>Return a department by ID.</returns>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.OrdersController">
+            <summary>
+                Everything about Order
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.OrdersController.Post(System.String,System.Int32,System.Int32)">
+            <summary>
+                Get Info about Order
+            </summary>
+            <param name="cart_id"></param>
+            <param name="shipping_id"></param>
+            <param name="tax_id"></param>
+            <returns>Return a order by ID.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.OrdersController.Get(System.Int32)">
+            <summary>
+                Get Info about Order
+            </summary>
+            <param name="order_id"></param>
+            <returns>Return a order by ID.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.OrdersController.GetOrdersByCustomer">
+            <summary>
+                Get orders by Customer
+            </summary>
+            <returns>Return a list of order.</returns>
+            <response code="200">An array of object Order</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.OrdersController.GetOrderDetail(System.Int32)">
+            <summary>
+                Get Info about Order
+            </summary>
+            <param name="order_id"></param>
+            <returns>Return a order by ID.</returns>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.ProductController">
+            <summary>
+                Everything about Product
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.Get(System.String,System.Int32,System.Int32)">
+            <summary>
+                Get Products
+            </summary>
+            <returns>Return a list of products.</returns>
+            <response code="200">An array of object Product</response>
+            <response code="200">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.Get(System.Int32)">
+            <summary>
+                Get Product by ID
+            </summary>
+            <param name="product_id"></param>
+            <returns>Return a product by ID.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.Search(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Search Products
+            </summary>
+            <param name="query_string"></param>
+            <param name="all_words"></param>
+            <param name="page"></param>
+            <param name="limit"></param>
+            <param name="description_length"></param>
+            <returns>Search Products.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.ProductsByCategory(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Search Products of Categories
+            </summary>
+            <param name="category_id"></param>
+            <param name="page"></param>
+            <param name="limit"></param>
+            <param name="description_length"></param>
+            <returns>Search Products of Categories.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.ProductsByDepartment(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Search Products of Categories
+            </summary>
+            <param name="department_id"></param>
+            <param name="page"></param>
+            <param name="limit"></param>
+            <param name="description_length"></param>
+            <returns>Search Products on Department.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.GetProductDetails(System.Int32)">
+            <summary>
+                Get details of a Product
+            </summary>
+            <param name="product_id"></param>
+            <returns>Get details of a Product.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.GetProductLocations(System.Int32)">
+            <summary>
+                Get locations of a
+            </summary>
+            <param name="product_id"></param>
+            <returns>Get locations of a Product.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.GetProductReviews(System.Int32)">
+            <summary>
+                Get reviews of a Product
+            </summary>
+            <param name="product_id"></param>
+            <returns>Get reviews of a Product.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ProductController.PostProductReviews(System.Int32,System.String,System.Int16)">
+            <summary>
+                Get reviews of a Product
+            </summary>
+            <param name="product_id">ProductID</param>
+            <param name="review">Review Text of the Product</param>
+            <param name="rating">Rating of Product</param>
+            <returns>Get reviews of a Product.</returns>
+            <response code="200">No data.</response>
+            <response code="400">Return a error object</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.ShippingController">
+            <summary>
+                Everything about Shipping
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShippingController.Get">
+            <summary>
+                Get Shipping
+            </summary>
+            <returns>Return a list of shipping.</returns>
+            <response code="200">An array of object Shipping</response>
+            <response code="200">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShippingController.Get(System.Int32)">
+            <summary>
+                Get Shipping by ID
+            </summary>
+            <param name="shipping_id"></param>
+            <returns>Return a shipping by ID.</returns>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.ShoppingCartController">
+            <summary>
+                Everything about ShoppingCart
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.GenerateUniqueId">
+            <summary>
+                Generate the unique CART ID
+            </summary>
+            <returns>Return a list of shoppingcart.</returns>
+            <response code="200">An array of object ShoppingCart</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.Add(System.String,System.String,System.String)">
+            <summary>
+                Add a Product in Shopping Cart
+            </summary>
+            <param name="cart_id">Cart ID</param>
+            <param name="product_id">Product ID</param>
+            <param name="attributes">Attributes of a product</param>
+            <returns>Return a cart by ID.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.Get(System.String)">
+            <summary>
+                Get List of Products in Shopping Cart
+            </summary>
+            <param name="cart_id">Cart ID</param>
+            <returns>Return a cart by ID.</returns>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.UpdateCartItem(System.Int32,System.Int32)">
+            <summary>
+                Update Shopping Cart item
+            </summary>
+            <param name="item_id">Item ID</param>
+            <param name="quantity">Item Quantity</param>
+            <response code="200">Return a array of products in the cart.</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.EmptyCart(System.String)">
+            <summary>
+                Empty cart
+            </summary>
+            <param name="cart_id">Cart ID</param>
+            <response code="200">Return an empty array.</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.MoveToCart(System.Int32)">
+            <summary>
+                Move a product to cart
+            </summary>
+            <param name="item_id">Item ID</param>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.TotalAmount(System.String)">
+            <summary>
+                Return a total Amount from Cart
+            </summary>
+            <param name="cart_id">Cart ID</param>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.SaveForLater(System.Int32)">
+            <summary>
+                Save a Product for later
+            </summary>
+            <param name="item_id">Item ID</param>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.GetSaved(System.String)">
+            <summary>
+                Get Products saved for later
+            </summary>
+            <param name="cart_id">Item ID</param>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.ShoppingCartController.RemoveProduct(System.Int32)">
+            <summary>
+                Empty cart
+            </summary>
+            <param name="item_id">Item ID</param>
+            <response code="200">No data</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.StripeController">
+            <summary>
+                Everything about Stripe
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.StripeController.Charge(System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+                Get Stripe
+            </summary>
+            <param name="stripeToken">
+                The API token, you can use this example to get it:
+                https://stripe.com/docs/stripe-js/elements/quickstart
+            </param>
+            <param name="order_id">The order ID recorded before (Check the Order Documentation)</param>
+            <param name="description">Description to order.</param>
+            <param name="amount">Only numbers like: 999</param>
+            <param name="currency">Default value : USD</param>
+            <returns>Return a list of stripe.</returns>
+            <response code="200">Object from Stripe</response>
+            <response code="400">Return a error object</response>
+            <response code="401">Unauthorized</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.StripeController.WebHooks">
+            <summary>
+                Endpoint that provide a synchronization
+            </summary>
+            <response code="200">This endpoint is used by Stripe</response>
+        </member>
+        <member name="T:TuringBackend.Api.Controllers.TaxController">
+            <summary>
+                Everything about Tax
+            </summary>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.TaxController.Get">
+            <summary>
+                Get Tax
+            </summary>
+            <returns>Return a list of tax.</returns>
+            <response code="200">An array of object Tax</response>
+            <response code="400">Return a error object</response>
+        </member>
+        <member name="M:TuringBackend.Api.Controllers.TaxController.Get(System.Int32)">
+            <summary>
+                Get Tax by ID
+            </summary>
+            <param name="tax_id"></param>
+            <returns>Return a tax by ID.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:TuringBackend.Api.Core.PasswordHasher" -->
+        <member name="P:TuringBackend.Models.Category.CategoryId">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Department.DepartmentId">
+            <summary>
+                example: 1
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Department.Name">
+            <summary>
+                example: Regional
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Department.Description">
+            <summary>
+                example: Proud of your country? Wear a T-shirt with a national symbol stamp!
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.CategoryBasic.DepartmentId">
+            <summary>
+                example: 1
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.CategoryBasic.CategoryId">
+            <summary>
+                example: 1
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.CategoryBasic.Name">
+            <summary>
+                example: Regional
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Error.Code">
+            <summary>
+                example: USR_02
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Error.Message">
+            <summary>
+                example: The field example is empty.
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Error.Field">
+            <summary>
+                example: example
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.NotFound.Message">
+            <summary>
+                example: Endpoint not found.
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Unauthorized.Code">
+            <summary>
+                example: UAT_02
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Unauthorized.Message">
+            <summary>
+                example: The apikey is invalid.
+            </summary>
+        </member>
+        <member name="P:TuringBackend.Models.Unauthorized.Field">
+            <summary>
+                example: API-KEY
+            </summary>
+        </member>
+    </members>
+</doc>
