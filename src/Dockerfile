@@ -44,7 +44,7 @@ RUN curl -SL --output dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotn
 
 
 # Configure web servers to bind to port 8000 when present
-ENV ASPNETCORE_URLS=http://+:8000 \
+ENV ASPNETCORE_URLS=http://+:80 \
     # Enable detection of running in a container
     DOTNET_RUNNING_IN_CONTAINER=true \
     # Enable correct mode for dotnet watch (only mode supported in a container)
@@ -66,7 +66,7 @@ RUN dotnet publish -c Release -o bin
 
 WORKDIR $PROJECT_DIR/TuringBackend.Api/bin/
 
-EXPOSE 8000/tcp
+EXPOSE 80/tcp
 
 COPY turing-entrypoint.sh /turing-entrypoint.sh
 
